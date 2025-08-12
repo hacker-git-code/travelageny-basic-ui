@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ continent.name }} - Travel Next</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .continent-hero {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("{{ url_for('static', filename='images/' + continent.image) }}");
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo">Travel Next</a>
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}#destinations">Destinations</a>
+                <a href="{{ url_for('index') }}#about">About</a>
+                <a href="{{ url_for('index') }}#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="continent-hero">
+        <div class="hero-content">
+            <h1>Discover the Wonders of {{ continent.name }}</h1>
+            <p>{{ continent.description }}</p>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="destinations-grid">
+            {% for destination in continent.destinations %}
+            <div class="destination-card">
+                <img src="{{ url_for('static', filename='images/' + destination.image) }}" alt="{{ destination.name }}" class="destination-image">
+                <div class="destination-content">
+                    <h3>{{ destination.name }}</h3>
+                    <p>{{ destination.description }}</p>
+                    <div class="destination-highlights">
+                        {% for highlight in destination.highlights.split(', ') %}
+                        <span class="highlight">{{ highlight }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="{{ url_for('destination', id=destination.id) }}" class="btn">Explore More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Travel Next is your gateway to extraordinary destinations and unforgettable experiences around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li>Email: info@travelnext.com</li>
+                    <li>WhatsApp: +1 234 567 890</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

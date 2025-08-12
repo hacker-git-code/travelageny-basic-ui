@@ -1,0 +1,13 @@
+Please add the following images here:
+1. hero-bg.jpg - A stunning travel landscape
+2. Continent images:
+   - north-america.jpg
+   - south-america.jpg
+   - europe.jpg
+   - asia.jpg
+   - africa.jpg
+   - oceania.jpg
+3. Destination images:
+   - nyc.jpg
+   - machu-picchu.jpg
+   - tokyo.jpg

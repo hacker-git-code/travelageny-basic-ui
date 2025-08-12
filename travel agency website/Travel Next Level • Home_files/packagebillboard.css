@@ -1,0 +1,1696 @@
+/**
+ * c24pp specific normalization
+ */
+div.c24pp1.c24pp2.c24pp3:before,
+div.c24pp1.c24pp2.c24pp3:after,
+div.c24pp1.c24pp2.c24pp3 *:not(optgroup):before,
+div.c24pp1.c24pp2.c24pp3 *:not(optgroup):after {
+  content: initial;
+  margin: initial;
+  padding: initial;
+  border: initial;
+}
+.c24pp1.c24pp2.c24pp3 {
+  font-size: 12px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: normal;
+  position: static;
+  /* due to a workaround implemented in firefox to otherwise unfixed bug #46111 from 2000 we have to work around their workaround and not remove :before/:after from optgroup here */
+  /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+  /**
+    * 1. Set default font family to sans-serif.
+    * 2. Prevent iOS text size adjust after orientation change, without disabling
+    *    user zoom.
+    */
+  /*
+    html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+    */
+  /**
+    * Remove default margin.
+    */
+  /*
+    body {
+    margin: 0;
+}
+    */
+  /* HTML5 display definitions
+    ========================================================================== */
+  /**
+    * Correct `block` display not defined for any HTML5 element in IE 8/9.
+    * Correct `block` display not defined for `details` or `summary` in IE 10/11
+    * and Firefox.
+    * Correct `block` display not defined for `main` in IE 11.
+    */
+  /*
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    menu,
+    nav,
+    section,
+    summary {
+    display: block;
+}
+    */
+  /**
+    * 1. Correct `inline-block` display not defined in IE 8/9.
+    * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+    */
+  /*
+    audio,
+    canvas,
+    progress,
+    video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+    */
+  /**
+    * Prevent modern browsers from displaying `audio` without controls.
+    * Remove excess height in iOS 5 devices.
+    */
+  /*
+    audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+    */
+  /**
+    * Address `[hidden]` styling not present in IE 8/9/10.
+    * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+    */
+  /*
+    [hidden],
+    template {
+    display: none;
+}
+    */
+  /* Links
+    ========================================================================== */
+  /**
+    * Remove the gray background color from active links in IE 10.
+    */
+  /**
+    * Improve readability when focused and also mouse hovered in all browsers.
+    */
+  /* Text-level semantics
+    ========================================================================== */
+  /**
+    * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+    */
+  /*
+    abbr[title] {
+    border-bottom: 1px dotted;
+}
+    */
+  /**
+    * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+    */
+  /**
+    * Address styling not present in Safari and Chrome.
+    */
+  /*
+    dfn {
+    font-style: italic;
+}
+    */
+  /**
+    * Address variable `h1` font-size and margin within `section` and `article`
+    * contexts in Firefox 4+, Safari, and Chrome.
+    */
+  /**
+    * Address styling not present in IE 8/9.
+    */
+  /*
+    mark {
+    background: #ff0;
+    color: #000;
+}
+    */
+  /**
+    * Address inconsistent and variable font size in all browsers.
+    */
+  /*
+    small {
+    font-size: 80%;
+}
+    */
+  /**
+    * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+    */
+  /*
+    sub,
+    sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+    sup {
+    top: -0.5em;
+}
+
+    sub {
+    bottom: -0.25em;
+}
+    */
+  /* Embedded content
+    ========================================================================== */
+  /**
+    * Remove border when inside `a` element in IE 8/9/10.
+    */
+  /**
+    * Correct overflow not hidden in IE 9/10/11.
+    */
+  /*
+    svg:not(:root) {
+    overflow: hidden;
+}
+    */
+  /* Grouping content
+    ========================================================================== */
+  /**
+    * Address margin not present in IE 8/9 and Safari.
+    */
+  /*
+    figure {
+    margin: 1em 40px;
+}
+    */
+  /**
+    * Address differences between Firefox and other browsers.
+    */
+  /*
+    hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+    */
+  /**
+    * Contain overflow in all browsers.
+    */
+  /*
+    pre {
+    overflow: auto;
+}
+    */
+  /**
+    * Address odd `em`-unit font size rendering in all browsers.
+    */
+  /*
+    code,
+    kbd,
+    pre,
+    samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+    */
+  /* Forms
+    ========================================================================== */
+  /**
+    * Known limitation: by default, Chrome and Safari on OS X allow very limited
+    * styling of `select`, unless a `border` property is set.
+    */
+  /**
+    * 1. Correct color not being inherited.
+    *    Known issue: affects color of disabled elements.
+    * 2. Correct font properties not being inherited.
+    * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+    */
+  /**
+    * Address `overflow` set to `hidden` in IE 8/9/10/11.
+    */
+  /**
+    * Address inconsistent `text-transform` inheritance for `button` and `select`.
+    * All other form control elements do not inherit `text-transform` values.
+    * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+    * Correct `select` style inheritance in Firefox.
+    */
+  /**
+    * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+    *    and `video` controls.
+    * 2. Correct inability to style clickable `input` types in iOS.
+    * 3. Improve usability and consistency of cursor style between image-type
+    *    `input` and others.
+    */
+  /**
+    * Re-set default cursor for disabled elements.
+    */
+  /**
+    * Remove inner padding and border in Firefox 4+.
+    */
+  /**
+    * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+    * the UA stylesheet.
+    */
+  /**
+    * It's recommended that you don't attempt to style these elements.
+    * Firefox's implementation doesn't respect box-sizing, padding, or width.
+    *
+    * 1. Address box sizing set to `content-box` in IE 8/9/10.
+    * 2. Remove excess padding in IE 8/9/10.
+    */
+  /**
+    * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+    * `font-size` values of the `input`, it causes the cursor style of the
+    * decrement button to change from `default` to `text`.
+    */
+  /**
+    * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+    * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+    *    (include `-moz` to future-proof).
+    */
+  /**
+    * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+    * Safari (but not Chrome) clips the cancel button when the search input has
+    * padding (and `textfield` appearance).
+    */
+  /**
+    * Define consistent border, margin, and padding.
+    */
+  /*
+    fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+    */
+  /**
+    * 1. Correct `color` not being inherited in IE 8/9/10/11.
+    * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+    */
+  /*
+    legend {
+    border: 0;
+    padding: 0;
+}
+    */
+  /**
+    * Remove default vertical scrollbar in IE 8/9/10/11.
+    */
+  /*
+    textarea {
+    overflow: auto;
+}
+    */
+  /**
+    * Don't inherit the `font-weight` (applied by a rule above).
+    * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+    */
+  /* Tables
+    ========================================================================== */
+  /**
+    * Remove most spacing between table cells.
+    */
+}
+.c24pp1.c24pp2.c24pp3 * {
+  color: inherit;
+  font-size: inherit;
+  box-sizing: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  margin: initial;
+  padding: initial;
+  border: initial;
+  position: initial;
+  line-height: initial;
+  outline: initial;
+  background: initial;
+}
+.c24pp1.c24pp2.c24pp3 ul li {
+  list-style-image: none;
+  list-style: initial;
+  display: list-item;
+}
+.c24pp1.c24pp2.c24pp3 a {
+  background-color: transparent;
+}
+.c24pp1.c24pp2.c24pp3 a:active,
+.c24pp1.c24pp2.c24pp3 a:hover {
+  outline: 0;
+}
+.c24pp1.c24pp2.c24pp3 b,
+.c24pp1.c24pp2.c24pp3 strong {
+  font-weight: bold;
+}
+.c24pp1.c24pp2.c24pp3 h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.c24pp1.c24pp2.c24pp3 img {
+  border: 0;
+}
+.c24pp1.c24pp2.c24pp3 button,
+.c24pp1.c24pp2.c24pp3 input,
+.c24pp1.c24pp2.c24pp3 optgroup,
+.c24pp1.c24pp2.c24pp3 select,
+.c24pp1.c24pp2.c24pp3 textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+.c24pp1.c24pp2.c24pp3 button {
+  overflow: visible;
+}
+.c24pp1.c24pp2.c24pp3 button,
+.c24pp1.c24pp2.c24pp3 select {
+  text-transform: none;
+}
+.c24pp1.c24pp2.c24pp3 button,
+.c24pp1.c24pp2.c24pp3 html input[type="button"],
+.c24pp1.c24pp2.c24pp3 input[type="reset"],
+.c24pp1.c24pp2.c24pp3 input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+.c24pp1.c24pp2.c24pp3 button[disabled],
+.c24pp1.c24pp2.c24pp3 html input[disabled] {
+  cursor: default;
+}
+.c24pp1.c24pp2.c24pp3 button::-moz-focus-inner,
+.c24pp1.c24pp2.c24pp3 input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.c24pp1.c24pp2.c24pp3 input {
+  line-height: normal;
+}
+.c24pp1.c24pp2.c24pp3 input[type="checkbox"],
+.c24pp1.c24pp2.c24pp3 input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+.c24pp1.c24pp2.c24pp3 input[type="number"]::-webkit-inner-spin-button,
+.c24pp1.c24pp2.c24pp3 input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+.c24pp1.c24pp2.c24pp3 input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+.c24pp1.c24pp2.c24pp3 input[type="search"]::-webkit-search-cancel-button,
+.c24pp1.c24pp2.c24pp3 input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.c24pp1.c24pp2.c24pp3 optgroup {
+  font-weight: bold;
+}
+.c24pp1.c24pp2.c24pp3 table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.c24pp1.c24pp2.c24pp3 td,
+.c24pp1.c24pp2.c24pp3 th {
+  padding: 0;
+}
+/*! jQuery UI - v1.11.4 - 2015-07-28
+ * http://jqueryui.com
+ * Includes: core.css, autocomplete.css, datepicker.css, menu.css, theme.css
+ * Copyright 2015 jQuery Foundation and other contributors; Licensed MIT */
+/* Layout helpers
+----------------------------------*/
+.c24pp1.c24pp2.c24pp3 {
+  /* Interaction Cues
+    ----------------------------------*/
+  /* Icons
+    ----------------------------------*/
+  /* states and images */
+  /* Misc visuals
+    ----------------------------------*/
+  /* Overlays */
+  /* with multiple calendars */
+  /* RTL support */
+  /* icon support */
+  /* left-aligned */
+  /* right-aligned */
+  /* Component containers
+    ----------------------------------*/
+  /* Interaction states
+    ----------------------------------*/
+  /* Interaction Cues
+    ----------------------------------*/
+  /* Icons
+    ----------------------------------*/
+  /* states and images */
+  /* positioning */
+  /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+  /* Misc visuals
+    ----------------------------------*/
+  /* Corner radius */
+  /* Overlays */
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-hidden {
+  display: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-clearfix:before,
+.c24pp1.c24pp2.c24pp3 .ui-helper-clearfix:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-clearfix:after {
+  clear: both;
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-clearfix {
+  min-height: 0;
+  /* support: IE7 */
+}
+.c24pp1.c24pp2.c24pp3 .ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /* support: IE8 */
+}
+.c24pp1.c24pp2.c24pp3 .ui-front {
+  z-index: 100;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-disabled {
+  cursor: default !important;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.c24pp1.c24pp2.c24pp3 .ui-autocomplete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: default;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker {
+  width: 17em;
+  padding: .2em .2em 0;
+  display: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-prev,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-prev-hover,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-next-hover {
+  top: 1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-next {
+  right: 2px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-next-hover {
+  right: 1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-prev span,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker select.ui-datepicker-month,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker select.ui-datepicker-year {
+  width: 45%;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  font-weight: bold;
+  border: 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker td {
+  border: 0;
+  padding: 1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker td span,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker td a {
+  display: block;
+  padding: .2em;
+  text-align: right;
+  text-decoration: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl {
+  direction: rtl;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-group {
+  float: right;
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.c24pp1.c24pp2.c24pp3 .ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  outline: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-menu {
+  position: absolute;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-menu-item {
+  position: relative;
+  margin: 0;
+  padding: 3px 1em 3px .4em;
+  cursor: pointer;
+  min-height: 0;
+  /* support: IE7 */
+  /* support: IE10, see #8844 */
+  list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-menu-divider {
+  margin: 5px 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-width: 1px 0 0 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-state-focus,
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-state-active {
+  margin: -1px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu-icons {
+  position: relative;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu-icons .ui-menu-item {
+  padding-left: 2em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: .2em;
+  margin: auto 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-menu .ui-menu-icon {
+  left: auto;
+  right: 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1.1em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget .ui-widget {
+  font-size: 1em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget input,
+.c24pp1.c24pp2.c24pp3 .ui-widget select,
+.c24pp1.c24pp2.c24pp3 .ui-widget textarea,
+.c24pp1.c24pp2.c24pp3 .ui-widget button {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1em;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-content {
+  border: 1px solid #dcdcdc;
+  background: #ffffff url("/filestore/712/ui-bg-flat-0-ffffff-40x100.png") 50% 50% repeat-x;
+  color: #666;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-content a {
+  color: #666;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-header {
+  border: 1px solid #005ea8;
+  background: #005ea8 url("/filestore/712/ui-bg-flat-0-005ea8-40x100.png") 50% 50% repeat-x;
+  color: #ffffff;
+  font-weight: bold;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-header a {
+  color: #ffffff;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-default,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-default,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-default {
+  border: 1px solid #dcdcdc;
+  background: #f7f7f7 url("/filestore/712/ui-bg-flat-75-f7f7f7-40x100.png") 50% 50% repeat-x;
+  font-weight: normal;
+  color: #005ea8;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-default a,
+.c24pp1.c24pp2.c24pp3 .ui-state-default a:link,
+.c24pp1.c24pp2.c24pp3 .ui-state-default a:visited {
+  color: #005ea8;
+  text-decoration: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-hover,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-hover,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-hover,
+.c24pp1.c24pp2.c24pp3 .ui-state-focus,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-focus,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-focus {
+  border: 1px solid #005ea8;
+  background: #005ea8 url("/filestore/712/ui-bg-flat-0-005ea8-40x100.png") 50% 50% repeat-x;
+  font-weight: normal;
+  color: #005ea8;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-hover a,
+.c24pp1.c24pp2.c24pp3 .ui-state-hover a:hover,
+.c24pp1.c24pp2.c24pp3 .ui-state-hover a:link,
+.c24pp1.c24pp2.c24pp3 .ui-state-hover a:visited,
+.c24pp1.c24pp2.c24pp3 .ui-state-focus a,
+.c24pp1.c24pp2.c24pp3 .ui-state-focus a:hover,
+.c24pp1.c24pp2.c24pp3 .ui-state-focus a:link,
+.c24pp1.c24pp2.c24pp3 .ui-state-focus a:visited {
+  color: #005ea8;
+  text-decoration: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-active,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-active,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-active {
+  border: 1px solid #aaaaaa;
+  background: #ffffff url("/filestore/712/ui-bg-flat-0-ffffff-40x100.png") 50% 50% repeat-x;
+  font-weight: normal;
+  color: #212121;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-active a,
+.c24pp1.c24pp2.c24pp3 .ui-state-active a:link,
+.c24pp1.c24pp2.c24pp3 .ui-state-active a:visited {
+  color: #212121;
+  text-decoration: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-highlight,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-highlight,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-highlight {
+  border: 1px solid #005ea8;
+  background: #005ea8 url("/filestore/712/ui-bg-flat-0-005ea8-40x100.png") 50% 50% repeat-x;
+  color: #fff;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-highlight a,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-highlight a,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-highlight a {
+  color: #fff;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-error,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-error,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-error {
+  border: 1px solid #cd0a0a;
+  color: #cd0a0a;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-error a,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-error a,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-error a {
+  color: #cd0a0a;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-error-text,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-error-text,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-error-text {
+  color: #cd0a0a;
+}
+.c24pp1.c24pp2.c24pp3 .ui-priority-primary,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-priority-primary,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-priority-primary {
+  font-weight: bold;
+}
+.c24pp1.c24pp2.c24pp3 .ui-priority-secondary,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-priority-secondary,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-priority-secondary {
+  opacity: .7;
+  filter: alpha(opacity=70);
+  /* support: IE8 */
+  font-weight: normal;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-disabled,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-state-disabled,
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-state-disabled {
+  opacity: .35;
+  filter: alpha(opacity=35);
+  /* support: IE8 */
+  background-image: none;
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-disabled .ui-icon {
+  filter: alpha(opacity=35);
+  /* support: IE8 - See #6059 */
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon {
+  width: 16px;
+  height: 16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon,
+.c24pp1.c24pp2.c24pp3 .ui-widget-content .ui-icon {
+  background-image: url("/filestore/28/ui-icons-666-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-header .ui-icon {
+  background-image: url("/filestore/323/ui-icons-ffffff-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-default .ui-icon {
+  background-image: url("/filestore/28/ui-icons-005ea8-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-hover .ui-icon,
+.c24pp1.c24pp2.c24pp3 .ui-state-focus .ui-icon {
+  background-image: url("/filestore/323/ui-icons-ffffff-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-active .ui-icon {
+  background-image: url("/filestore/28/ui-icons-454545-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-highlight .ui-icon {
+  background-image: url("/filestore/28/ui-icons-fff-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-state-error .ui-icon,
+.c24pp1.c24pp2.c24pp3 .ui-state-error-text .ui-icon {
+  background-image: url("/filestore/28/ui-icons-cd0a0a-256x240.png");
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-blank {
+  background-position: 16px 16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-n {
+  background-position: 0 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-ne {
+  background-position: -16px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-e {
+  background-position: -32px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-se {
+  background-position: -48px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-s {
+  background-position: -64px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-sw {
+  background-position: -80px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-w {
+  background-position: -96px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-1-nw {
+  background-position: -112px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-2-n-s {
+  background-position: -128px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-carat-2-e-w {
+  background-position: -144px 0;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-n {
+  background-position: 0 -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-ne {
+  background-position: -16px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-e {
+  background-position: -32px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-se {
+  background-position: -48px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-s {
+  background-position: -64px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-sw {
+  background-position: -80px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-w {
+  background-position: -96px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-1-nw {
+  background-position: -112px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-2-n-s {
+  background-position: -128px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-triangle-2-e-w {
+  background-position: -144px -16px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-n {
+  background-position: 0 -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-ne {
+  background-position: -16px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-e {
+  background-position: -32px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-se {
+  background-position: -48px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-s {
+  background-position: -64px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-sw {
+  background-position: -80px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-w {
+  background-position: -96px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-1-nw {
+  background-position: -112px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-2-n-s {
+  background-position: -128px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-2-ne-sw {
+  background-position: -144px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-2-e-w {
+  background-position: -160px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-2-se-nw {
+  background-position: -176px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowstop-1-n {
+  background-position: -192px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowstop-1-e {
+  background-position: -208px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowstop-1-s {
+  background-position: -224px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowstop-1-w {
+  background-position: -240px -32px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-n {
+  background-position: 0 -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-ne {
+  background-position: -16px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-e {
+  background-position: -32px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-se {
+  background-position: -48px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-s {
+  background-position: -64px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-sw {
+  background-position: -80px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-w {
+  background-position: -96px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-1-nw {
+  background-position: -112px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-2-n-s {
+  background-position: -128px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-2-ne-sw {
+  background-position: -144px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-2-e-w {
+  background-position: -160px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthick-2-se-nw {
+  background-position: -176px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthickstop-1-n {
+  background-position: -192px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthickstop-1-e {
+  background-position: -208px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthickstop-1-s {
+  background-position: -224px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowthickstop-1-w {
+  background-position: -240px -48px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturnthick-1-w {
+  background-position: 0 -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturnthick-1-n {
+  background-position: -16px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturnthick-1-e {
+  background-position: -32px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturnthick-1-s {
+  background-position: -48px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturn-1-w {
+  background-position: -64px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturn-1-n {
+  background-position: -80px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturn-1-e {
+  background-position: -96px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowreturn-1-s {
+  background-position: -112px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowrefresh-1-w {
+  background-position: -128px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowrefresh-1-n {
+  background-position: -144px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowrefresh-1-e {
+  background-position: -160px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrowrefresh-1-s {
+  background-position: -176px -64px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-4 {
+  background-position: 0 -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-arrow-4-diag {
+  background-position: -16px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-extlink {
+  background-position: -32px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-newwin {
+  background-position: -48px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-refresh {
+  background-position: -64px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-shuffle {
+  background-position: -80px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-transfer-e-w {
+  background-position: -96px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-transferthick-e-w {
+  background-position: -112px -80px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-folder-collapsed {
+  background-position: 0 -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-folder-open {
+  background-position: -16px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-document {
+  background-position: -32px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-document-b {
+  background-position: -48px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-note {
+  background-position: -64px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-mail-closed {
+  background-position: -80px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-mail-open {
+  background-position: -96px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-suitcase {
+  background-position: -112px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-comment {
+  background-position: -128px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-person {
+  background-position: -144px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-print {
+  background-position: -160px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-trash {
+  background-position: -176px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-locked {
+  background-position: -192px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-unlocked {
+  background-position: -208px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-bookmark {
+  background-position: -224px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-tag {
+  background-position: -240px -96px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-home {
+  background-position: 0 -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-flag {
+  background-position: -16px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-calendar {
+  background-position: -32px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-cart {
+  background-position: -48px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-pencil {
+  background-position: -64px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-clock {
+  background-position: -80px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-disk {
+  background-position: -96px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-calculator {
+  background-position: -112px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-zoomin {
+  background-position: -128px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-zoomout {
+  background-position: -144px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-search {
+  background-position: -160px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-wrench {
+  background-position: -176px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-gear {
+  background-position: -192px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-heart {
+  background-position: -208px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-star {
+  background-position: -224px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-link {
+  background-position: -240px -112px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-cancel {
+  background-position: 0 -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-plus {
+  background-position: -16px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-plusthick {
+  background-position: -32px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-minus {
+  background-position: -48px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-minusthick {
+  background-position: -64px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-close {
+  background-position: -80px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-closethick {
+  background-position: -96px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-key {
+  background-position: -112px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-lightbulb {
+  background-position: -128px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-scissors {
+  background-position: -144px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-clipboard {
+  background-position: -160px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-copy {
+  background-position: -176px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-contact {
+  background-position: -192px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-image {
+  background-position: -208px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-video {
+  background-position: -224px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-script {
+  background-position: -240px -128px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-alert {
+  background-position: 0 -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-info {
+  background-position: -16px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-notice {
+  background-position: -32px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-help {
+  background-position: -48px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-check {
+  background-position: -64px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-bullet {
+  background-position: -80px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-radio-on {
+  background-position: -96px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-radio-off {
+  background-position: -112px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-pin-w {
+  background-position: -128px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-pin-s {
+  background-position: -144px -144px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-play {
+  background-position: 0 -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-pause {
+  background-position: -16px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-seek-next {
+  background-position: -32px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-seek-prev {
+  background-position: -48px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-seek-end {
+  background-position: -64px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-seek-start {
+  background-position: -80px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-seek-first {
+  background-position: -80px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-stop {
+  background-position: -96px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-eject {
+  background-position: -112px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-volume-off {
+  background-position: -128px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-volume-on {
+  background-position: -144px -160px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-power {
+  background-position: 0 -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-signal-diag {
+  background-position: -16px -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-signal {
+  background-position: -32px -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-battery-0 {
+  background-position: -48px -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-battery-1 {
+  background-position: -64px -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-battery-2 {
+  background-position: -80px -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-battery-3 {
+  background-position: -96px -176px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-plus {
+  background-position: 0 -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-minus {
+  background-position: -16px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-close {
+  background-position: -32px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-triangle-e {
+  background-position: -48px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-triangle-s {
+  background-position: -64px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-triangle-w {
+  background-position: -80px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-triangle-n {
+  background-position: -96px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-arrow-e {
+  background-position: -112px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-arrow-s {
+  background-position: -128px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-arrow-w {
+  background-position: -144px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-arrow-n {
+  background-position: -160px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-zoomin {
+  background-position: -176px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-zoomout {
+  background-position: -192px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circle-check {
+  background-position: -208px -192px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circlesmall-plus {
+  background-position: 0 -208px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circlesmall-minus {
+  background-position: -16px -208px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-circlesmall-close {
+  background-position: -32px -208px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-squaresmall-plus {
+  background-position: -48px -208px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-squaresmall-minus {
+  background-position: -64px -208px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-squaresmall-close {
+  background-position: -80px -208px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-grip-dotted-vertical {
+  background-position: 0 -224px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-grip-dotted-horizontal {
+  background-position: -16px -224px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-grip-solid-vertical {
+  background-position: -32px -224px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-grip-solid-horizontal {
+  background-position: -48px -224px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-gripsmall-diagonal-se {
+  background-position: -64px -224px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-icon-grip-diagonal-se {
+  background-position: -80px -224px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-corner-all,
+.c24pp1.c24pp2.c24pp3 .ui-corner-top,
+.c24pp1.c24pp2.c24pp3 .ui-corner-left,
+.c24pp1.c24pp2.c24pp3 .ui-corner-tl {
+  border-top-left-radius: 6px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-corner-all,
+.c24pp1.c24pp2.c24pp3 .ui-corner-top,
+.c24pp1.c24pp2.c24pp3 .ui-corner-right,
+.c24pp1.c24pp2.c24pp3 .ui-corner-tr {
+  border-top-right-radius: 6px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-corner-all,
+.c24pp1.c24pp2.c24pp3 .ui-corner-bottom,
+.c24pp1.c24pp2.c24pp3 .ui-corner-left,
+.c24pp1.c24pp2.c24pp3 .ui-corner-bl {
+  border-bottom-left-radius: 6px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-corner-all,
+.c24pp1.c24pp2.c24pp3 .ui-corner-bottom,
+.c24pp1.c24pp2.c24pp3 .ui-corner-right,
+.c24pp1.c24pp2.c24pp3 .ui-corner-br {
+  border-bottom-right-radius: 6px;
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-overlay {
+  background: #aaaaaa url("/filestore/712/ui-bg-flat-0-aaaaaa-40x100.png") 50% 50% repeat-x;
+  opacity: .3;
+  filter: alpha(opacity=30);
+  /* support: IE8 */
+}
+.c24pp1.c24pp2.c24pp3 .ui-widget-shadow {
+  margin: -8px 0 0 -8px;
+  padding: 8px;
+  background: #aaaaaa url("/filestore/712/ui-bg-flat-0-aaaaaa-40x100.png") 50% 50% repeat-x;
+  opacity: .3;
+  filter: alpha(opacity=30);
+  /* support: IE8 */
+  border-radius: 8px;
+}
+/*!
+ * Shared widget styles
+ *
+ * @copyright Check24 Vergleichsportal GmbH
+ */
+div.c24pp1.c24pp2.c24pp3 {
+  color: #005ea8;
+  border: 1px solid #dcdcdc;
+  background: #fafafa;
+  width: 100%;
+  height: 220px;
+}
+div.c24pp1.c24pp2.c24pp3 select,
+div.c24pp1.c24pp2.c24pp3 input,
+div.c24pp1.c24pp2.c24pp3 option,
+div.c24pp1.c24pp2.c24pp3 optgroup {
+  color: #000;
+  font-weight: normal;
+}
+div.c24pp1.c24pp2.c24pp3 option {
+  padding: 2px;
+}
+div.c24pp1.c24pp2.c24pp3 optgroup option {
+  padding-left: 10px;
+}
+div.c24pp1.c24pp2.c24pp3 select,
+div.c24pp1.c24pp2.c24pp3 input {
+  background-color: #fff;
+}
+div.c24pp1.c24pp2.c24pp3 select.c24pp-error,
+div.c24pp1.c24pp2.c24pp3 input.c24pp-error {
+  border: 1px solid red !important;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-datepicker-calendar a.ui-state-hover {
+  color: #ffffff;
+  border: 1px solid #dcdcdc;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-datepicker-calendar a.ui-state-hover.ui-state-active {
+  color: #ffffff;
+  background: #005ea8;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-datepicker-today a {
+  border: 1px solid #dcdcdc;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-autocomplete li.ui-menu-item {
+  margin: 0 0 0 0;
+  border: 1px solid #fff;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-autocomplete li.ui-menu-item.ui-state-focus,
+div.c24pp1.c24pp2.c24pp3 .ui-autocomplete li:hover {
+  background: #E0EDF7;
+  border: 1px solid #005ea8;
+  margin: 0 0 0 0;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-autocomplete li.ui-menu-item.ui-state-disabled,
+div.c24pp1.c24pp2.c24pp3 .ui-autocomplete li.ui-menu-item.ui-state-disabled:hover {
+  background: #E0EDF7;
+  font-weight: bold;
+  color: #444;
+  opacity: 1;
+  margin: 0 0 0 0;
+  border: 1px solid #fff;
+}
+div.c24pp1.c24pp2.c24pp3 .ui-autocomplete li em {
+  font-weight: bold;
+  font-style: normal;
+}
+div.c24pp1.c24pp2.c24pp3.c24packagebillboard {
+  height: auto;
+  max-width: 100%;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  -moz-box-sizing: border-box;
+  display: block;
+  padding: 12px;
+  /*position: relative;*/
+}
+.c24pp1.c24pp2.c24pp3 .ui-datepicker {
+  width: 24em;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard input.c24package-location,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard input.c24package-dep,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard select.c24package-duration,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard input.c24package-ret,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard select.c24package-airport {
+  border: 1px solid #dcdcdc;
+  width: 100%;
+  display: inline-block;
+  padding: 0 0 0 6px;
+  color: #575757;
+  font: normal 16px/18px Arial, Helvetica, sans-serif;
+  height: 43px;
+}
+@media (min-width: 480px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard .c24package-top {
+    display: flex;
+  }
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-location {
+  display: inline-block;
+  width: 100%;
+  margin-right: 10px;
+  padding: 0;
+  vertical-align: top;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-airport {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+@media (max-width: 480px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-airport {
+    margin-top: 15px;
+  }
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-bottom {
+  position: relative;
+  margin-top: 15px;
+  padding: 0;
+}
+@media (min-width: 480px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-bottom {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-bottom {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 480px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-bottom div.c24package-ret {
+    margin: 15px 0;
+  }
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-bottom {
+    margin-top: 15px !important;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-bottom {
+    margin-top: 20px !important;
+  }
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-dep,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-ret,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-duration,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-submit {
+  display: inline-block;
+  width: 100%;
+  margin-right: 10px;
+  padding: 0;
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-dep,
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-ret,
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-duration,
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-submit {
+    width: 49%;
+    margin: 0;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-duration,
+  .c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-submit {
+    margin-top: 15px;
+  }
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-submit {
+  margin-right: 0 !important;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard input.c24package-location,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard select.c24package-airport {
+  border: 1px solid #dcdcdc;
+  display: block;
+  padding: 0 0 0 6px;
+  color: #575757;
+  font: normal 16px/18px Arial, Helvetica, sans-serif;
+  height: 43px;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard span.c24package-dep,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard span.c24package-duration,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard span.c24package-ret,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard span.c24package-submit,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard span.c24package-location,
+.c24pp1.c24pp2.c24pp3.c24packagebillboard span.c24package-airport {
+  margin-bottom: 6px;
+  display: block;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard button.c24package-submit {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  margin: 0;
+  border: 0;
+  color: #ffffff;
+  background-color: #1980d0;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  height: 43px;
+  width: 100%;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard button.c24package-submit:hover {
+  background-color: #1670b7;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard button.c24package-submit:active {
+  background-color: #1670b7;
+}
+.c24pp1.c24pp2.c24pp3.c24packagebillboard div.c24package-logo {
+  background: #ffffff url(/filestore/909/widget-logo-107x25.png) no-repeat right top;
+  display: block;
+  width: 100%;
+  height: 25px;
+}

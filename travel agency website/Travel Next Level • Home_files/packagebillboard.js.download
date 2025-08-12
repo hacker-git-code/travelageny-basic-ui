@@ -1,0 +1,233 @@
+
+(function(){ 
+function indexOf(array,item){ 
+if(!Array.prototype.indexOf){ 
+for(var i=0,j=array.length;i<j;i++){ 
+if(array[i]===item){ return i;}}
+return-1;}else{ 
+return array.indexOf(item);}}
+function initContainer(containerId,html,replacements){ 
+var container=document.getElementById(containerId);if(container===null){ 
+missingContainer();}
+var value;var data=getData(container);if(typeof data['custom']!=='undefined'||typeof data['noinject']!=='undefined'){ 
+return;}
+
+html=html.replace('{%whitelabel%}',data['whitelabel']==='yes'?'-hidden':'');for(var key in replacements){ 
+if(replacements.hasOwnProperty(key)){ 
+var dataKey=key.replace('_','-');html=html.replace('{%'+key+'%}',typeof data[dataKey]==='string'?data[dataKey]:replacements[key]);}}
+
+if(data['add-style']==='yes'){ 
+html='<link rel="stylesheet" type="text/css" href="'+hostUrl+'/widgets/packagebillboard-widget.css">'+html;}
+container.innerHTML=html;}
+function initOptions(target,containerId,disableGet,paramsBase,paramsCalculate,dataKeyMap){ 
+paramsBase=paramsBase||[];paramsCalculate=paramsCalculate||[];dataKeyMap=dataKeyMap||{ };var container=document.getElementById(containerId);if(container===null){ 
+missingContainer();}
+var calculate=false;var dataset=getData(container);for(var key in dataset){ 
+var targetKey=typeof dataKeyMap[key]==='string'?dataKeyMap[key]:key.replace(/-/g,'_');target[targetKey]=dataset[key];calculate=calculate||(dataset[key]!==''&&indexOf(paramsCalculate,targetKey)!==-1);}
+if(disableGet){ 
+return calculate;}
+var allowed=paramsCalculate.slice().concat(paramsBase);var search=location.search;search=search.indexOf('?')===0?search.slice(1).split('&'):[];for(var i=0;i<search.length;++i){ 
+var item=search[i];if(item.slice(0,6)==='c24pp_'){ 
+var pair=item.slice(6).split('=');pair[0]=decodeURIComponent(pair[0]);pair[1]=decodeURIComponent(pair[1].replace(/\+/g,'%20'));if(indexOf(allowed,pair[0])!==-1&&pair[1]!==''&&pair[0].toLowerCase()!=='scriptsrc'){ 
+target[pair[0]]=pair[1];calculate=calculate||indexOf(paramsCalculate,pair[0])!==-1;}}}
+return calculate;}
+function getData(element){ 
+var result={ };var data=element.attributes;for(var i=0;i<data.length;++i){ 
+if(data[i].name.match(/^data\-/)){ 
+result[data[i].name.replace(/^data\-/,'')]=data[i].value;}}
+return result;}
+function buildParameterList(parameters,keyMap,excludes,prefix){ 
+keyMap=keyMap||{ };excludes=excludes||[];prefix=prefix||'';var urlParams=[];for(var key in parameters){ 
+if(parameters.hasOwnProperty(key)&&(typeof parameters[key]==='string'||typeof parameters[key]==='number')&&parameters[key]!==''&&indexOf(excludes,key)===-1){ 
+var keyName=keyMap.hasOwnProperty(key)?keyMap[key]:key;if(keyName!==null){ 
+urlParams.push(encodeURIComponent(prefix+keyName)+'='+encodeURIComponent(parameters[key]));}}}
+return urlParams.join('&');}
+function buildParameterObject(parameters,keyMap,excludes){ 
+keyMap=keyMap||{ };excludes=excludes||[];var urlParams={ };for(var key in parameters){ 
+if(parameters.hasOwnProperty(key)&&indexOf(excludes,key)===-1){ 
+var keyName=keyMap.hasOwnProperty(key)?keyMap[key]:key;if(keyName!==null){ 
+urlParams[keyName]=parameters[key];}}}
+return urlParams;}
+function buildPrefixMap(prefix,options,excludes){ 
+excludes=excludes||[];var keyMap={ };for(var key in options){ 
+if(options.hasOwnProperty(key)&&indexOf(excludes,key)===-1){ 
+keyMap[key]=prefix+key;}}
+return keyMap;}
+function eventHandler(eventType,handler,extra){ 
+if(window.addEventListener){ 
+addEventListener(eventType,function(e){ handler(e,extra);},false);}else{ 
+attachEvent('on'+eventType,function(e){ handler(e,extra);});}}
+function scrollTo(type,iframe,offset){ 
+offset=offset||0;if(type==='iframe'){ 
+iframe.scrollIntoView(true);window.scrollTo(0,window.scrollY+offset);}else if(type==='page'){ 
+window.scrollTo(0,offset);}else if(isFinite(parseInt(type))){ 
+window.scrollTo(0,parseInt(type)+offset);}}
+function createIframe(host,initialHeight,url,loader,postSource,messageHandler,loadHandler,timeout,timeoutHandler){ 
+var firstLoad=true;var iframe=document.createElement('iframe');iframe.style.width=host.style.width;iframe.style.height=initialHeight+'px';iframe.style.border='0';iframe.style.margin='0';iframe.style.padding='0';iframe.frameBorder='0';iframe.scrolling='no';iframe.title='Vergleichsrechner';host.appendChild(iframe);if(loader){ 
+var content=iframe.contentWindow?iframe.contentWindow:(iframe.contentDocument.document?iframe.contentDocument.document:iframe.contentDocument);content.document.open();content.document.write('<html><head></head><body>'+loader+'</body></html>');content.document.close();}
+var gotMessage=false;var timer=null;iframe.onload=function(event){ 
+if(typeof postSource==='function'&&iframe.contentWindow&&iframe.contentWindow.postMessage){ 
+postSource(iframe);}else if(postSource&&iframe.contentWindow&&iframe.contentWindow.postMessage){ 
+iframe.contentWindow.postMessage(location.protocol+"//"+location.hostname+(location.port!==""?":":"")+location.port,"*");}
+if(typeof loadHandler==='function'){ 
+if(firstLoad){ 
+firstLoad=false;}else{ 
+loadHandler.call(iframe,event);}}
+if(typeof timeoutHandler==='function'&&timeout>0){ 
+clearTimeout(timer);gotMessage=false;timer=setTimeout(function(){ 
+if(gotMessage===false){ 
+timeoutHandler.call(iframe,event);}},timeout);}};if(typeof messageHandler==='function'){ 
+eventHandler('message',function(e,iframe){ if(messageHandler.call(this,e,iframe)){ gotMessage=true;}},iframe);}
+iframe.src=url;return iframe;}
+function createPixel(host,url){ 
+var image=document.createElement('img');image.src=url;image.alt='Tracking';image.style.width='1px';image.style.height='1px';image.style.border='0';image.style.margin='0';image.style.padding='0';image.style.position='absolute';image.style.left='0';image.style.bottom='0';host.appendChild(image);return image;}
+function missingContainer(){ 
+throw new Error('C24PP Widget Container nicht gefunden. Bitte stellen Sie sicher dass die ID des DIV-Elements mit der im Script Pfad übergebenen ID übereinstimmt und nur Buchstaben, Zahlen, Bindestriche oder Unterstriche enthält.');}
+function buildTracking(partnerId,adId,trackingId){ 
+return'pid='+parseInt(partnerId)+'&aid='+parseInt(adId)+'&tid='+encodeURIComponent(trackingId);}
+var openURL=function(target,url){ 
+if(typeof target!=='string'||target===''){ 
+window.location=url;}else{ 
+window.open(url,target);}}
+function createScript(src,async,callback){ 
+async=async!==undefined?async:true;var script=document.createElement('script');script.type='text/javascript';script.async=async;script.src=src;var insert=document.getElementsByTagName('script')[0];insert.parentNode.insertBefore(script,insert);var done=false;script.onload=script.onreadystatechange=function(){ 
+if(!done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){ 
+done=true;script.onload=script.onreadystatechange=null;insert.parentNode.removeChild(script);if(typeof callback==='function'){ 
+callback(script);}}}
+return script;}
+function getQuery(url){ 
+var sep=url.indexOf('?');if(sep===-1){ 
+return'';}
+var query=url.slice(sep+1).split('&');var result=[];for(var i=0;i<query.length;++i){ 
+var item=query[i];var pair=item.split('=');if(pair[1]!==''&&pair[1]!=='-'&&typeof pair[0]==='string'&&typeof pair[1]==='string'){ 
+result.push(pair[0]+'='+pair[1]);}}
+return result.join('&');}
+function stripQuery(url){ 
+var sep=url.indexOf('?');return sep===-1?url:url.slice(0,sep);}
+var convertDate=function(date,format){ 
+if(format!=='iso'&&format!=='german'){ 
+throw'invalid format specified';}
+if(date instanceof Date){ 
+date=formatDate(date);}
+var parts;if((parts=date.split('.')).length===3){ 
+var tmp=parts[0];parts[0]=parts[2];parts[2]=tmp;}else if((parts=date.split('-')).length!==3){ 
+return null;}
+parts[0]=('00'+parts[0]).slice(-4);parts[1]=('00'+parts[1]).slice(-2);parts[2]=('00'+parts[2]).slice(-2);if(format==='iso'){ 
+return parts[0]+'-'+parts[1]+'-'+parts[2];}else{ 
+return parts[2]+'.'+parts[1]+'.'+parts[0];}};var isoDate=function(date){ 
+var part=date.split('.');if(part.length!==3){ 
+return null;}else{ 
+return('20'+part[2]).slice(-4)+'-'+('00'+part[1]).slice(-2)+'-'+('00'+part[0]).slice(-2);}};var formatDate=function(dateObject){ 
+return('0'+dateObject.getDate()).slice(-2)+'.'+
+('0'+(dateObject.getMonth()+1)).slice(-2)+'.'+
+dateObject.getFullYear();};function invoke(fun,parameters){ 
+if(typeof fun==='string'){ 
+if(typeof window[fun]!=='function'){ 
+console.warn('C24PP Widget: "'+fun+'" ist unbekannt oder keine Funktion');}else{ 
+try{ 
+window[fun].apply(null,parameters);}catch(e){ 
+console.warn('C24PP Widget: "'+fun+'" löste folgenden Fehler aus:',e);}}}}
+function splitTracking(container,maxLen,keyNames){ 
+var primary=keyNames[0];var headerLen=4;function freeSlot(){ 
+for(var i=0;i<=3;++i){ 
+if(container[keyNames[i]]===undefined){ 
+return i;}}
+return-1;}
+if(container[primary].length>maxLen){ 
+var header=0;var remaining=container[primary];var nextSlot=0;while(remaining.length>0&&nextSlot>-1){ 
+var sliceLen=maxLen-(nextSlot===0?headerLen:0);var part=remaining.slice(0,sliceLen);remaining=remaining.slice(sliceLen);container[keyNames[nextSlot]]=part;if(nextSlot>0){ 
+header+=(1<<(nextSlot-1));}
+nextSlot=freeSlot();}
+container[primary]='_J'+header+':'+container[primary];}}
+function addUrlParam(baseUrl,param,value){ 
+var sep=baseUrl.indexOf('?')===-1?'?':'&';return baseUrl+sep+encodeURIComponent(param)+'='+encodeURIComponent(value);}
+
+var addGCLID;(function(){ 
+var localStorageAvailable=true;try{ 
+if(!window.localStorage){ 
+return;}}
+catch(e){ 
+localStorageAvailable=false;}
+var token='c24pp-gclid';var search=location.search;search=search.indexOf('?')===0?search.slice(1).split('&'):[];for(var i=0;i<search.length;++i){ 
+var pair=search[i].split('=');if(pair[0]==='gclid'&&typeof pair[1]==='string'){ 
+localStorage.setItem(token,pair[1]);break;}}
+addGCLID=function(target){ 
+if(localStorageAvailable){ 
+result=typeof target==='string'?target:'';if(localStorage.getItem(token)===null||result.search('_GCLID:')>-1){ 
+return target;}else{ 
+result=result+'_GCLID:'+localStorage.getItem(token);return result;}}else{ 
+return target;}};})();
+var hostUrl='https://files.check24.net';var disableGet=false;var partnerId=788567;var trackingId=null;var containerId='c24pp-package-widget39332';var container=document.getElementById(containerId);var deviceoutput=container.getBoundingClientRect().width<760?'mobile':'desktop';var Module=(function(){ 
+var callbackId=0;var dispatchOrder=[];var createScriptNode=function(url){ 
+var element=document.createElement('script');element.type='text/javascript';element.src=url;document.body.appendChild(element);return element;};var loadScript=function(module,url){ 
+var callbackName=''+Module.prefix.replace(/[^a-z0-9_]/g,'_')+callbackId++;var scriptNode=createScriptNode(module.buildURL(url,callbackName));module.loaded=false;dispatchOrder.push(module);window[callbackName]=function(contents){ 
+module.src=contents;module.loaded=true;try{ 
+delete window[callbackName];}catch(e){ 
+window[callbackName]=undefined;}
+document.body.removeChild(scriptNode);tryDispatch();};};var tryDispatch=function(){ 
+while(dispatchOrder.length>0&&dispatchOrder[0].loaded){ 
+var module=dispatchOrder[0];module.execute();module.onReady();dispatchOrder.shift();}};var Module=function Module(url){ 
+this.url=url;loadScript(this,url);};Module.baseUrl=hostUrl;Module.prefix='c24pp';Module.prototype.url='';Module.prototype.exports=null;Module.prototype.sequential=true;Module.prototype.loaded=false;Module.prototype.src='';Module.prototype.onReady=function(){ };Module.prototype.execute=function(){ 
+var module=this;module.exports={ };eval(this.src+'\n//@ sourceURL='+this.url.replace(/\.jsonp$/,'.js'));module.src='';};Module.prototype.buildURL=function(file,callbackName){ 
+return Module.baseUrl+file+'?callback='+callbackName;};Module.load=function(url){ 
+return new Module(url);};return Module;})();
+
+var html="\r\n\u003Cdiv class=\"c24pp1 c24pp2 c24pp3 c24packagebillboard\"\u003E\r\n    \u003Cdiv class=\"c24package-logo{%whitelabel%}\"\u003E\u003C\/div\u003E\r\n    \u003Cdiv class=\"c24package-top\"\u003E\r\n        \u003Cdiv class=\"c24package-location ui-front\"\u003E\r\n            \u003Cspan class=\"c24package-location\"\u003EReiseziel\u003C\/span\u003E\r\n            \u003Cinput class=\"c24package-location\" type=\"text\" placeholder=\"Ort\/Region\/Land\/Hotel\"\u003E\r\n        \u003C\/div\u003E\r\n        \u003Cdiv class=\"c24package-airport\"\u003E\r\n            \u003Cspan class=\"c24package-airport\"\u003EAbflughafen\u003C\/span\u003E\r\n            \u003Cselect class=\"c24package-airport\"\u003E\u003C\/select\u003E\r\n        \u003C\/div\u003E\r\n    \u003C\/div\u003E\r\n    \u003Cdiv class=\"c24package-bottom\"\u003E\r\n        \u003Cdiv class=\"c24package-dep\"\u003E\r\n            \u003Cspan class=\"c24package-dep\"\u003EFr\u00fcheste Hinreise\u003C\/span\u003E\r\n            \u003Cinput class=\"c24package-dep\" type=\"text\" placeholder=\"tt.mm.jjjj\"\u003E\r\n        \u003C\/div\u003E\r\n        \u003Cdiv class=\"c24package-ret\"\u003E\r\n            \u003Cspan class=\"c24package-ret\"\u003ESp\u00e4teste R\u00fcckreise\u003C\/span\u003E\r\n            \u003Cinput class=\"c24package-ret\" type=\"text\" placeholder=\"tt.mm.jjjj\"\u003E\r\n        \u003C\/div\u003E\r\n        \u003Cdiv class=\"c24package-duration\"\u003E\r\n            \u003Cspan class=\"c24package-duration\"\u003EReisedauer\u003C\/span\u003E\r\n            \u003Cselect class=\"c24package-duration\"\u003E\u003C\/select\u003E\r\n        \u003C\/div\u003E\r\n        \u003Cdiv class=\"c24package-submit\"\u003E\r\n            \u003Cspan class=\"c24package-submit\"\u003E&zwnj;\u003C\/span\u003E\r\n            \u003Cbutton class=\"c24package-submit\"\u003E{%button%}\u003C\/button\u003E\r\n        \u003C\/div\u003E\r\n    \u003C\/div\u003E\r\n\u003C\/div\u003E\r\n\r\n";var defaultAdId=223;
+initContainer(containerId,html,{ 
+title:'Urlaub zum Bestpreis',button:'Reise finden &raquo;',whitelabel:''});var jQuery=null,$=null;var datePickerOverrideDivId='c24pp-datepicker-'+Math.random().toString().replace('.','');Module.prefix='c24pp_'+partnerId+'_'+containerId;Module.load('/widgets/jquery.jsonp').onReady=function(){ 
+jQuery=this.exports;jQuery.noConflict(true);jQuery.ajaxSetup({ cache:true});$=jQuery;};Module.load('/widgets/jquery-ui.jsonp').onReady=function(){ 
+var $cnt=$('#'+containerId);var trackingId=$cnt.data('tid1')||$cnt.data('tid')||'';var adId=$cnt.data('aid')||defaultAdId;var $dep=$cnt.find('input.c24package-dep');var $ret=$cnt.find('input.c24package-ret');var $duration=$cnt.find('select.c24package-duration');var $airport=$cnt.find('select.c24package-airport');var $location=$cnt.find('input.c24package-location');var customHandler=$cnt.data('custom')==='yes';var noValidate=$cnt.data('validate')==='no'||$cnt.data('allow-invalid')=='yes';var selectedDestination={ label:null,value:null,data:{ regions:{ }}};var resultLimit=20;var day=24*60*60*1000;var typeMap={ 'country':'Land','region':'Region','city':'Stadt','hotel':'Hotel'};var data=selectedDestination.data;var defaultCountryId=$cnt.data('country-id');var defaultRegionId=$cnt.data('region-id');var defaultCityId=$cnt.data('city-id');var defaultHotelId=$cnt.data('hotel-id');var defaultLocation=$cnt.data('location');var setLocation=function(){ 
+selectedDestination.value=defaultLocation;$location.val(selectedDestination.value);};if(defaultHotelId&&defaultRegionId&&defaultLocation){ 
+setLocation();data.type='hotel';data.regions=[defaultRegionId];data.id=defaultHotelId;}else if(defaultCityId&&defaultRegionId&&defaultLocation){ 
+setLocation();data.type='city';data.regions=[defaultRegionId];data.id=defaultCityId;}else if(defaultRegionId&&defaultLocation){ 
+setLocation();data.type='region';data.id=defaultRegionId;}
+if(customHandler===false){ 
+$.tabIndex(['#'+containerId+' input.c24package-location','#'+containerId+' input.c24package-dep','#'+containerId+' input.c24package-ret','#'+containerId+' select.c24package-duration','#'+containerId+' select.c24package-airport','#'+containerId+' button.c24package-submit']);}
+if(customHandler===false){ 
+var today=new Date();function prefillDep(){ 
+if($dep.val()==''){ 
+var isoDate=convertDate(new Date(),'iso');var monthDay=isoDate.slice(-5);var year=isoDate.slice(0,4);var depPreset=monthDay>='11-01'||monthDay<='05-31'?(monthDay>='11-01'?parseInt(year)+1:year)+'-06-01':convertDate(new Date(today.getTime()+7*day),'iso');$dep.val(convertDate(depPreset,'german'));}}
+function prefillRet(){ 
+if($ret.val()==''&&$dep.val()!=''){ 
+var isoDate=convertDate($dep.val(),'iso');var depDate=new Date(isoDate);$ret.val(convertDate(new Date(depDate.getTime()+14*day),'german'));}}
+if($cnt.data('prefill-immediate')==='yes'){ 
+prefillDep();prefillRet();}else{ 
+$dep.on('mousedown',prefillDep);$ret.on('mousedown',prefillRet);}}
+if($cnt.data('dep')){ 
+$dep.val(convertDate($cnt.data('dep'),'german'));}
+if($cnt.data('ret')){ 
+$ret.val(convertDate($cnt.data('ret'),'german'));}
+$dep.datepicker();$ret.datepicker();$dep.on('change',function(){ 
+$ret.datepicker('option','minDate',$(this).datepicker('getDate'));});$dep.parent().find('span.icon-date').on('click',function(){ 
+$dep.focus();});$ret.parent().find('span.icon-date').on('click',function(){ 
+$ret.focus();});$duration.addOptions('',{ '':'Bitte wählen','exact':'Exakt','———#1':{ '1w':'1 Woche','2w':'2 Wochen'},'———#2':{ '5-8':'5 - 8 Tage','9-12':'9 - 12 Tage'},'———#3':{ '2':'2 Tage','3':'3 Tage','4':'4 Tage','5':'5 Tage','6':'6 Tage','7':'7 Tage','8':'8 Tage','9':'9 Tage','10':'10 Tage','11':'11 Tage','12':'12 Tage','13':'13 Tage','14':'14 Tage','15':'15 Tage','16':'16 Tage','17':'17 Tage','18':'18 Tage','19':'19 Tage','20':'20 Tage','21':'21 Tage','22':'22 Tage','23':'23 Tage','24':'24 Tage','25':'25 Tage','26':'26 Tage','27':'27 Tage','28':'28 Tage'},});if($cnt.data('duration')){ 
+$duration.val($cnt.data('duration'));}
+$airport.addOptions('',{ '':'Bitte wählen','Region':{ 'BLL,BRE,GWT,HAJ,HAM,LBC,RLG':'- Nord','BER,CSO,DRS,ERF,LEJ,PRG':'- Ost','BSL,FDH,FKB,FMM,INN,MUC,NUE,STR,SZG,ZRH':'- Süd','CGN,DTM,DUS,EIN,FMO,FRA,HHN,KSF,LGG,LUX,MST,NRN,PAD,SCN,SXB':'- West'},'Deutschland':{ 'BER':'- Berlin Brandenburg','BRE':'- Bremen','DTM':'- Dortmund','DRS':'- Dresden','DUS':'- Düsseldorf','ERF':'- Erfurt','FRA,HHN':'- Frankfurt - alle Flughäfen','FRA':'- Frankfurt am Main','HHN':'- Frankfurt-Hahn','FDH':'- Friedrichshafen','HAM':'- Hamburg','HAJ':'- Hannover','FKB':'- Karlsruhe / Baden-Baden','KSF':'- Kassel','CGN':'- Köln-Bonn','LEJ':'- Leipzig/Halle','LBC':'- Lübeck','CSO':'- Magdeburg / Cochstedt','FMM':'- Memmingen','MUC':'- München','FMO':'- Münster-Osnabrück','NUE':'- Nürnberg','PAD':'- Paderborn','RLG':'- Rostock','SCN':'- Saarbrücken','STR':'- Stuttgart','NRN':'- Weeze / Niederrhein','GWT':'- Westerland/Sylt',},'Luxemburg':{ 'LUX':'- Luxemburg (L)'},'Belgien':{ 'BRU':'- Brüssel (B)','CRL':'- Charleroi (B)','LGG':'- Lüttich (B)'},'Frankreich':{ 'SXB':'- Strasbourg (F)'},'Niederlande':{ 'AMS':'- Amsterdam (NL)','EIN':'- Eindhoven (NL)','GRQ':'- Groningen (NL)','MST':'- Maastricht (NL)'},'Österreich':{ 'GRZ':'- Graz (A)','INN':'- Innsbruck (A)','KLU':'- Klagenfurt (A)','LNZ':'- Linz (A)','SZG':'- Salzburg (A)','VIE':'- Wien (A)'},'Schweiz':{ 'BSL':'- Basel-Mulhouse (CH)','BRN':'- Bern (CH)','GVA':'- Genf (CH)','ACH':'- St. Gallen/Altenrhein (CH)','ZRH':'- Zürich (CH)'},'Polen':{ 'KRK':'- Krakau (PL)','WAW':'- Warschau (PL)'},'Dänemark':{ 'BLL':'- Billund (DK)'},'Tschechische Republik':{ 'PRG':'- Prag (CZ)'}});if($cnt.data('airport')){ 
+$airport.val($cnt.data('airport'));}
+$location.c24ppAutocomplete({ 
+minLength:3,select:function(event,ui){ 
+selectedDestination=ui.item;if(customHandler){ 
+$cnt.get(0).dispatchEvent(new CustomEvent('formchange',{ detail:getForm(true)}));}},source:function(request,response){ 
+$.ajax({ 
+url:"https://urlaub.check24.de/autocompleter?v=2_0_0&types=combined&term="+encodeURIComponent(request.term),type:'GET',dataType:'jsonp',error:function(xhr,status,error){ 
+response(null);},success:function(json){ 
+var result=[];if(typeof json==='object'&&json.statusmessage==='success'&&json.data instanceof Array){ 
+for(var j=0;j<json.data.length;++j){ 
+var data=json.data[j].data;for(var i=0;i<Math.min(resultLimit,data.length);++i){ 
+var item=data[i];var suffix='';if(typeof typeMap[item.type]==='string'){ 
+suffix=' ('+typeMap[item.type]+(typeof item.city==='string'?' in '+item.city:'')+')';}
+result.push({ label:item.highlightedLabel+suffix,value:item.label+suffix,data:item});}}}
+response(result);}});}});$cnt.validate({ 'input.c24package-location':function(){ return selectedDestination.value===$(this).val();},'input.c24package-dep':/^[0-3][0-9]\.[0-1][0-9]\.20[0-9]{2}$/,'input.c24package-ret':/^[0-3][0-9]\.[0-1][0-9]\.20[0-9]{2}$/,'select.c24package-airport':function(){ return $(this).val()!='';},'select.c24package-duration':function(){ return $(this).val()!='';},});var getForm=function(amendLocation){ 
+var dest=selectedDestination.data;var param={ 
+tid:trackingId,departure_date:isoDate($dep.val()),return_date:isoDate($ret.val()),travel_duration:$duration.val(),airport:$airport.val(),city_id:dest.type==='city'?dest.id:undefined,hotel_id:dest.type==='hotel'?dest.id:undefined,region_id:dest.type==='region'?dest.id:(typeof dest.regions[0]!=='undefined'?dest.regions.join(','):undefined),county_id:dest.type==='country'?dest.id:undefined,adult:$cnt.find('select[name="adult"]').val(),childrenCount:$cnt.find('select[name="children[childrenCount]"]').val(),'children_0[age]':$cnt.find('select[name="children[1][age]"]').val(),'children_1[age]':$cnt.find('select[name="children[2][age]"]').val(),'children_2[age]':$cnt.find('select[name="children[3][age]"]').val(),'children_3[age]':$cnt.find('select[name="children[4][age]"]').val()};if(amendLocation){ 
+param.location=selectedDestination.value;}
+return param;};$cnt.find('button.c24package-submit').on('click',function(){ 
+if(customHandler!==false||!(noValidate||$cnt.validate())){ 
+return;}
+var formURL=$cnt.data('form');if(typeof formURL!=='string'||formURL===''){ 
+console.warn('C24PP Widget Ziel URL nicht angegeben. Bitte stellen Sie sicher dass das Attribut data-form des Container-Elements eine gültige URL enthält.');return;}
+var c24netTracking=formURL.indexOf('//www.check24.net')>-1?'&'+buildTracking(partnerId,adId,trackingId):'';openURL($cnt.data('target'),formURL+(formURL.indexOf('?')>-1?'&':'?')+buildParameterList(getForm(),null,c24netTracking?['tid']:null,'c24pp_')+c24netTracking);});if(customHandler){ 
+$cnt.on('change','input, select',function(){ 
+$cnt.get(0).dispatchEvent(new CustomEvent('formchange',{ detail:getForm(true)}));});}
+createPixel($cnt.get(0),'https://a.check24.net/misc/view.php?pixel=yes&cid=9&'+buildTracking(partnerId,adId,trackingId));};
+})();
